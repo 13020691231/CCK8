@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCK8 Cell Experiment Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CCK8 Cell Experiment Analyzer</h1>
+        
+        <div class="upload-section">
+            <h2>Upload CCK8 Data File</h2>
+            <input type="file" id="fileInput" accept=".csv,.xlsx,.xls">
+            <button id="analyzeBtn">Analyze Data</button>
+            <div class="example-format">
+                <h3>Supported Data Format:</h3>
+                <p>Required columns: <strong>Well</strong>, <strong>OD450</strong>, <strong>Treatment</strong></p>
+                <pre>Well,OD450,Treatment
+A1,0.85,Control
+A2,0.82,Control
+B1,0.65,Drug 1
+B2,0.62,Drug 1</pre>
+                <p><a href="example.csv" download>Download Example CSV File</a></p>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>Analysis Results</h2>
+            <div id="chartContainer"></div>
+            <div id="conclusions"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
